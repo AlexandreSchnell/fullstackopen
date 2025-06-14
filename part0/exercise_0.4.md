@@ -5,10 +5,10 @@ sequenceDiagram
     participant server
 
     user->>browser: write a note in the input and click submit
-    browser->>server: sends data via POST to https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: send data via POST to https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
 
-    server-->server: saves the data sent by the browser
+    server-->server: save the data sent by the browser
     server-->>browser: redirect to https://studies.cs.helsinki.fi/exampleapp/notes
     deactivate server
 
