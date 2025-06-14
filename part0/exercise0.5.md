@@ -18,7 +18,7 @@ sequenceDiagram
     server-->>browser: the JavaScript file that builds the html elements
     deactivate server
 
-    Note right of browser: Browser call methods from spa.js via AJAX to get the data without reloading the page
+    Note right of browser: Browsers call methods from spa.js via AJAX to get the data without reloading the page
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
