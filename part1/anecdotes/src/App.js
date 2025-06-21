@@ -11,7 +11,8 @@ const App = () => {
     'Programar sem o uso extremamente intenso do console.log é o mesmo que um médico se recusar a usar raio-x ou testes sanguíneos ao diagnosticar pacientes.',
     'A única maneira de ir rápido é ir bem.'
   ]
-   
+  const initialVotes = new Array(anecdotes.length).fill(0)
+  const [votes, setVotes] = useState(initialVotes)
   const [selected, setSelected] = useState(0)
 
   const getRandomInt = (min, max) => {
@@ -25,9 +26,17 @@ const App = () => {
     setSelected(randomIndex)
   }
 
+  const handleVoteAnecdote = () => {
+    const arrayClone = [...votes]
+    arrayClone[selected] += 1
+    setVotes(arrayClone)
+  }
+
   return (
     <div>
       <p>{anecdotes[selected]}</p>
+      <p>has {votes[selected]} votes</p>
+      <button onClick={handleVoteAnecdote}>vote</button>
       <button onClick={handleRandomAnecdote}>next anecdote</button>
     </div>
   )
