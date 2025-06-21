@@ -6,9 +6,16 @@ const Title = ({ text }) => {
   )
 }
 
-const Statistics = ({ text, value }) => {
+const Statistics = (props) => {
   return (
-    <p>{text} {value}</p>
+    <>
+      <p>good {props.good}</p>
+      <p>neutral {props.neutral}</p>
+      <p>bad {props.bad}</p>
+      <p>all {props.all}</p>
+      <p>average {props.average}</p>
+      <p>positive {props.positive}</p>
+    </>
   )
 }
 
@@ -58,12 +65,14 @@ const App = () => {
       <Button onClick={handleNeutral} text="neutral" />
       <Button onClick={handleBad} text="bad" />
       <Title text="Statistics" />
-      <Statistics text="good" value={good} />
-      <Statistics text="neutral" value={neutral} />
-      <Statistics text="bad" value={bad} />
-      <Statistics text="all" value={all} />
-      <Statistics text="average" value={average} />
-      <Statistics text="positive" value={positive} />
+      <Statistics
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        all={all}
+        average={average}
+        positive={positive}
+      />
     </div>
   )
 }
